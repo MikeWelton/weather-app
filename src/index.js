@@ -26,7 +26,7 @@ if (DEBUG) {
     store = createStore(reducer, undefined, composeEnhancers(middleware));
 }
 
-//epicMiddleware.run(rootEpic);
+epicMiddleware.run(rootEpic);
 
 ReactDOM.render(
     <Provider store={store}>

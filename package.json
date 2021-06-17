@@ -11,6 +11,7 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "redux": "^4.1.0",
+    "rxjs": "^6.6.7",
     "styled-components": "^5.3.0",
     "web-vitals": "^1.1.2"
   },
@@ -39,8 +40,11 @@
     ]
   },
   "devDependencies": {
+    "ramda": "^0.27.1",
+    "react-autosuggest": "^10.1.0",
     "react-redux": "^7.2.4",
     "redux-observable": "^1.2.0",
+    "reselect": "^4.0.0",
     "styled-tools": "^1.7.2"
   }
 }
