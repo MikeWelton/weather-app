@@ -1,16 +1,17 @@
 import { ofType, combineEpics } from 'redux-observable';
-import { map, startWith } from 'rxjs/operators';
-import { SET_INPUT } from "./const";
-import { inputValueSelector, suggestionsSelector } from "./selectors";
+import { map, switchMap } from 'rxjs/operators';
+import { FETCH_SUGGESTIONS } from "./const";
+import { prop } from "ramda";
+import { from } from "rxjs";
+import { getSuggestions } from "./api";
+import { setSuggestions } from "./actions";
 
-const newInputEpic = (action$, state$) =>
+const newInputEpic = (action$) =>
     action$.pipe(
-        ofType(SET_INPUT),
-        startWith('For initialization'),
-        map(() => ({
-            input: inputValueSelector(state$.value),
-            suggestions: suggestionsSelector(state$.value),
-        }))
+        ofType(FETCH_SUGGESTIONS),
+        map(prop('input')),
+        switchMap((input) => from(getSuggestions(input))
+            .pipe(map((suggestions) => setSuggestions(suggestions))))
     );
 
 export const citySearchEpics = combineEpics(

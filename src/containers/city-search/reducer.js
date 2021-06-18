@@ -12,10 +12,10 @@ export const citySearchReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_INPUT:
             const {input} = action;
-            return state.set(['input'], input);
+            return state.set('input', input);
         case SET_SUGGESTIONS:
             const {suggestions} = action;
-            return state.set(['suggestions'], suggestions);
+            return state.set('suggestions', suggestions);
         default:
             return state;
     }
