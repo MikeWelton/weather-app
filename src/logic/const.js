@@ -1,7 +1,7 @@
 export const FORECAST_TYPE = {
-    REALTIME: 'REALTIME',
-    HOURLY: 'HOURLY',
-    DAILY: 'DAILY',
+    REALTIME: 'Realtime',
+    HOURLY: 'Hourly',
+    DAILY: 'Daily',
 };
 
 export const INITIAL_FORECAST_TYPE = FORECAST_TYPE.REALTIME;

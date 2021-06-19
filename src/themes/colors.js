@@ -9,11 +9,19 @@ export const colors = {
     }
 
     /* Some colors
+    Light theme:
     --fire-opal: #ee6352ff;
     --cyan-process: #08b2e3ff;
     --magnolia: #efe9f4ff;
     --forest-green-crayola: #57a773ff;
     --independence: #484d6dff;
+
+    Dark theme:
+    --deep-taupe: #755861ff;
+    --charcoal: #3a5061ff;
+    --manatee: #9e97a5ff;
+    --davys-grey: #4e5755ff;
+    --onyx: #37383eff;
 
     nice-yellow: '#FFB135',
     nice-blue: '#3583ff',

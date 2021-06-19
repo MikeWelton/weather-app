@@ -16,6 +16,10 @@ import {
     CONDITIONS_REDUCER_NAME,
     conditionsReducer
 } from "./containers/conditions/reducer";
+import {
+    FORECAST_REDUCER_NAME,
+    forecastReducer
+} from "./containers/forecast/reducer";
 
 export default function createReducer() {
     return combineReducers({
@@ -23,5 +27,6 @@ export default function createReducer() {
         [HISTORY_REDUCER_NAME]: historyReducer,
         [CITY_SEARCH_REDUCER_NAME]: citySearchReducer,
         [CONDITIONS_REDUCER_NAME]: conditionsReducer,
+        [FORECAST_REDUCER_NAME]: forecastReducer
     });
 }

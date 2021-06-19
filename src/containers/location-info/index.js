@@ -14,6 +14,7 @@ export const LocationInfo = () => {
             <LoaderWrapper>
                 <Loader type="TailSpin" color="#00BFFF" height={30} width={30} />
             </LoaderWrapper>}
+
             {currentLocation !== '' && currentLocation}
         </LocationInfoWrapper>
     );

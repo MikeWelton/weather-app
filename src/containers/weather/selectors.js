@@ -14,6 +14,11 @@ export const realtimeForecastSelector = createSelector(
     (weatherState) => weatherState.get('realtime')
 );
 
+export const hourlyForecastSelector = createSelector(
+    getWeatherState,
+    (weatherState) => weatherState.get('hourly')
+);
+
 export const dailyForecastSelector = createSelector(
     getWeatherState,
     (weatherState) => weatherState.get('daily')

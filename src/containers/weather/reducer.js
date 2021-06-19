@@ -15,7 +15,13 @@ const initialState = fromJS({
             text: '',
         },
     },
-    hourly: [],
+    hourly: [{
+        time: '',
+        temp: '',
+        condition: {
+            icon: ''
+        },
+    }],
     daily: []
 });
 
