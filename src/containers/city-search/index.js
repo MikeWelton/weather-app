@@ -1,11 +1,10 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
-import { filter } from 'ramda';
 import { inputValueSelector, suggestionsSelector } from "./selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSuggestions, setInputValue, setSuggestions } from "./actions";
 import { theme } from '../../themes/autosuggest.css';
-import { getSuggestionsApi } from "./api";
+import { updateCity } from "../weather/actions";
 
 export const CitySearch = () => {
     const inputValue = useSelector(inputValueSelector);
@@ -50,9 +49,13 @@ export const CitySearch = () => {
     const onChange = (event, {newValue, method}) => {
         if (method === 'enter' || method === 'click') {
             console.log('Update global state');
-            // update whole app, check cache etc
+            dispatch(updateCity(newValue));
+            dispatch(setInputValue(''));
         }
-        dispatch(setInputValue(newValue));
+        else {
+            dispatch(setInputValue(newValue));
+        }
+
     };
 
     const onSuggestionsFetchRequested = ({value}) => {
@@ -63,8 +66,10 @@ export const CitySearch = () => {
         dispatch(setSuggestions([]));
     };
 
-    const onSuggestionSelected = (event, { suggestion, method }) => {
+    const onSuggestionSelected = (event, {suggestion, method}) => {
+        dispatch(updateCity(suggestion));
         console.log('Update global state');
+        dispatch(setInputValue(''));
     }
 
     const inputProps = {

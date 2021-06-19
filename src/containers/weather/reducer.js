@@ -1,4 +1,5 @@
 import { fromJS } from 'immutable';
+import { UPDATE_WEATHER } from "./const";
 
 export const WEATHER_REDUCER_NAME = 'Weather';
 
@@ -6,15 +7,21 @@ const initialState = fromJS({
     location: {
         fullName: '',
         shortName: '',
-        longitude: 0,
         latitude: 0,
+        longitude: 0,
     },
-    realtimeData: {},
-    hourlyData: {},
-    dailyData: {}
+    realtime: {},
+    hourly: [],
+    daily: []
 });
 
 export const weatherReducer = (state = initialState, action) => {
-    return state;
+    switch (action.type) {
+        case UPDATE_WEATHER:
+            let { weatherData } = action;
+            return fromJS(weatherData);
+        default:
+            return state;
+    }
 };
 
