@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { theme } from 'styled-tools';
 
-export const LocationInfoWrapper = styled.div`
+export const ConditionsWrapper = styled.div`
     display: flex;
+    flex-direction: row;
     font-size: 16px;
     border-radius: 25px;
     background: #8fbaae;
     padding: 16px;
-    margin: 50px auto 5px auto;
-    width: 450px;
-    height: 20px;
+    margin: 5px auto;
+    width: 600px;
+    height: 220px;
 `;

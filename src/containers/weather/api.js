@@ -8,7 +8,7 @@ const parseApiData = (data) => {
     return {
         location: {
             fullName: `${location.name}, `
-                + ((location.region !== '') ? `${location.region},` : '')
+                + ((location.region !== '') ? `${location.region}, ` : '')
                 + `${location.country}`,
             shortName: `${location.name}, ${location.country}`,
             latitude: location.lat,
@@ -55,4 +55,27 @@ export const getWeather = async (cityName) => {
     let response = await post(url);
 
     return parseApiData(response.data);
+}
+
+export const getCityNameWithGeolocation = async () => {
+    const getPosition = () =>
+        new Promise((resolve) => {
+            navigator.geolocation.getCurrentPosition((position) => {
+                resolve(position);
+            });
+        });
+
+    const position = await getPosition();
+
+    let url = axios.getUri({
+        url: API.WEATHER.URL + API.WEATHER.METHOD.SEARCH,
+        params: {
+            key: API.WEATHER.KEY,
+            q: `${position.coords.latitude},${position.coords.longitude}`
+        }
+    });
+
+    let response = await post(url);
+
+    return response.data[0].name;
 }

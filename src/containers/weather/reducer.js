@@ -10,7 +10,11 @@ const initialState = fromJS({
         latitude: 0,
         longitude: 0,
     },
-    realtime: {},
+    realtime: {
+        condition: {
+            text: '',
+        },
+    },
     hourly: [],
     daily: []
 });

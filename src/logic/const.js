@@ -17,6 +17,7 @@ export const API = {
         },
     },
     GIF: {
-        URL: '',
+        KEY: 'QVM66W0VTOT9',
+        URL: 'https://g.tenor.com/v1/search',
     }
 }

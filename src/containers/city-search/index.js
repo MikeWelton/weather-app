@@ -47,6 +47,7 @@ export const CitySearch = () => {
     const renderSuggestion = suggestion => (<span>{suggestion}</span>);
 
     const onChange = (event, {newValue, method}) => {
+        console.log(method);
         if (method === 'enter' || method === 'click') {
             console.log('Update global state');
             dispatch(updateCity(newValue));
@@ -72,10 +73,18 @@ export const CitySearch = () => {
         dispatch(setInputValue(''));
     }
 
+    const onKeyDown = (event) => {
+        if (event.key === 'Enter' && suggestions.length > 0) {
+            dispatch(updateCity(suggestions[0]));
+            dispatch(setInputValue(''));
+        }
+    }
+
     const inputProps = {
         placeholder: "Type 'c'",
         value: inputValue,
         onChange: onChange,
+        //onKeyDown: onKeyDown,
     };
 
     return (
@@ -86,6 +95,7 @@ export const CitySearch = () => {
                      getSuggestionValue={getSuggestionValue}
                      renderSuggestion={renderSuggestion}
                      onSuggestionSelected={onSuggestionSelected}
+                     highlightFirstSuggestion={true}
                      inputProps={inputProps}
         />
     );
