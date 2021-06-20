@@ -1,7 +1,10 @@
 import { RealtimeWrapper } from './RealtimeWrapper';
 import React from "react";
 import { useSelector } from 'react-redux';
-import { realtimeForecastSelector } from '../../../weather/selectors';
+import {
+    localtimeSelector,
+    realtimeForecastSelector
+} from '../../../weather/selectors';
 import {
     RealtimeInfoWrapper,
     TemperatureWrapper,
@@ -9,6 +12,7 @@ import {
 } from './InnerComponentsWrappers';
 
 export const Realtime = () => {
+    const localtime = useSelector(localtimeSelector);
     const realtime = useSelector(realtimeForecastSelector);
 
     let iconUrl = realtime.get('condition').get('icon');
@@ -16,6 +20,9 @@ export const Realtime = () => {
     return (
         <RealtimeWrapper>
             <RealtimeInfoWrapper>
+                <div>
+                    {localtime}
+                </div>
                 <TemperatureWrapper>
                     {`${realtime.get('temp')}°`}
                 </TemperatureWrapper>

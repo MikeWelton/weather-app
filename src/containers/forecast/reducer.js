@@ -1,12 +1,11 @@
 import { fromJS } from 'immutable';
 import { SET_FORECAST_TYPE } from './const';
-import { FORECAST_TYPE, INITIAL_FORECAST_TYPE } from '../../logic/const';
+import { INITIAL_FORECAST_TYPE } from '../../logic/const';
 
 export const FORECAST_REDUCER_NAME = 'Forecast';
 
 const initialState = fromJS({
-    forecastType: FORECAST_TYPE.HOURLY
-    //TODO forecastType: INITIAL_FORECAST_TYPE
+    forecastType: INITIAL_FORECAST_TYPE
 });
 
 export const forecastReducer = (state = initialState, action) => {

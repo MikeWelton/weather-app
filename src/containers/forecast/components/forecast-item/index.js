@@ -2,7 +2,7 @@ import { ForecastItemWrapper } from './ForecastItemWrapper';
 import {
     TemperatureWrapper,
     TimeWrapper, WeatherIcon
-} from '../hourly/InnerComponentsWrappers';
+} from './InnerComponentsWrappers';
 
 export const ForecastItem = ({temperature, time, iconUrl}) => {
 

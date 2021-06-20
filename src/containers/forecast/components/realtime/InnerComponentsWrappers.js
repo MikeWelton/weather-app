@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const RealtimeInfoWrapper = styled.div`
     margin: auto;
     font-size: 24px;
-    text-align: center;
 `;
 
 export const TemperatureWrapper = styled.div`

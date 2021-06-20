@@ -6,8 +6,8 @@ export const LocationInfoWrapper = styled.div`
     font-size: 16px;
     border-radius: 25px;
     background: #8fbaae;
-    padding: 16px;
+    padding: 16px 30px;
     margin: 50px auto 5px auto;
-    width: 450px;
+    width: 540px;
     height: 20px;
 `;

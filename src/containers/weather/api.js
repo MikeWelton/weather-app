@@ -13,6 +13,7 @@ const parseApiData = (data) => {
             shortName: `${location.name}, ${location.country}`,
             latitude: location.lat,
             longitude: location.lon,
+            localtime: location.localtime
         },
         realtime: {
             temp: current.temp_c,

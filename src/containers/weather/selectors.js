@@ -9,6 +9,11 @@ export const cityNameSelector = createSelector(
     (weatherState) => weatherState.get('location').get('fullName')
 );
 
+export const localtimeSelector = createSelector(
+    getWeatherState,
+    (weatherState) => weatherState.get('location').get('localtime')
+);
+
 export const realtimeForecastSelector = createSelector(
     getWeatherState,
     (weatherState) => weatherState.get('realtime')

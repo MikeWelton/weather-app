@@ -12,6 +12,7 @@ export const TemperatureWrapper = styled.div`
 `;
 
 export const WeatherIcon = styled.img`
+    margin: 10px auto;
     width: 64px;
     height: 64px;
 `;

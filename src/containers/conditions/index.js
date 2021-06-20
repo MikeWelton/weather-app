@@ -10,9 +10,9 @@ import {
 import { toLower } from "ramda";
 import {
     ConditionAndGifWrapper,
-    ConditionInfoWrapper,
+    ConditionInfoWrapper, GifWrapper,
     IsWeatherNiceWrapper, LoaderWrapper
-} from "./components/InnerComponentsWrappers";
+} from './components/InnerComponentsWrappers';
 import { gifUrlSelector } from "./selectors";
 
 export const Conditions = () => {
@@ -38,15 +38,17 @@ export const Conditions = () => {
 
     return (
         <ConditionsWrapper>
-            <IsWeatherNiceWrapper>
-                {isWeatherNiceInfo}
-            </IsWeatherNiceWrapper>
-            <ConditionAndGifWrapper>
-                <ConditionInfoWrapper>
+            <ConditionInfoWrapper>
+                <IsWeatherNiceWrapper>
+                    {isWeatherNiceInfo}
+                </IsWeatherNiceWrapper>
+                <div>
                     {conditionInfo}
-                </ConditionInfoWrapper>
+                </div>
+            </ConditionInfoWrapper>
+            <GifWrapper>
                 <img src={gifUrl} alt="gif" />
-            </ConditionAndGifWrapper>
+            </GifWrapper>
         </ConditionsWrapper>
     );
 }
