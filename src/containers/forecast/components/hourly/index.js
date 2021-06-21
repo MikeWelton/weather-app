@@ -12,6 +12,9 @@ export const Hourly = () => {
     const hourly = useSelector(hourlyForecastSelector);
 
     let normalized = localtime.slice(0, -2) + '00';
+    if (normalized.slice(-5)[0] === ' ') {
+        normalized = normalized.slice(0, -4) + '0' + normalized.slice(-4);
+    }
     let currentHourly = hourly.slice(
         hourly.findIndex((item) => (item.get('time') === normalized))
     );

@@ -1,4 +1,4 @@
-import { combineEpics, ofType } from "redux-observable";
+/*import { combineEpics, ofType } from "redux-observable";
 import { UPDATE_CITY, UPDATE_WITH_GEOLOCATION } from "./const";
 import { prop } from "ramda";
 import { map, mergeMap, startWith, switchMap } from 'rxjs/operators';
@@ -34,4 +34,4 @@ const updateWithGeolocationEpic = (action$) =>
 export const weatherEpics = combineEpics(
     updateCityDataEpic,
     updateWithGeolocationEpic
-);
+);*/

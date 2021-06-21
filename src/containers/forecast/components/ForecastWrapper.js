@@ -3,5 +3,5 @@ import { theme } from 'styled-tools';
 
 export const ForecastWrapper = styled.div`
     margin: auto;
-    padding-top: 50px;
+    padding-top: 40px;
 `;

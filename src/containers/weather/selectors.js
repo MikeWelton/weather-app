@@ -4,6 +4,11 @@ import { WEATHER_REDUCER_NAME } from "./reducer";
 
 const getWeatherState = prop(WEATHER_REDUCER_NAME);
 
+export const themeSelector = createSelector(
+    getWeatherState,
+    (weatherState) => weatherState.get('theme').toJS()
+);
+
 export const cityNameSelector = createSelector(
     getWeatherState,
     (weatherState) => weatherState.get('location').get('fullName')

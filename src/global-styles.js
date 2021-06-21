@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
         font-size: ${theme('fonts.basic.fontSize')};
         font-family: ${theme('fonts.basic.fontFamily')};
+        overflow: hidden;
     }
 
     body {

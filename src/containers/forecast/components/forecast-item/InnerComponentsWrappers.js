@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from 'styled-tools';
 
 export const TimeWrapper = styled.div`
     margin: 10px 5px;
@@ -7,8 +8,9 @@ export const TimeWrapper = styled.div`
 `;
 
 export const TemperatureWrapper = styled.div`
+    color: ${theme('colors.temperatureText')};
     margin: 5px;
-    font-size: 26px;
+    font-size: 30px;
 `;
 
 export const WeatherIcon = styled.img`

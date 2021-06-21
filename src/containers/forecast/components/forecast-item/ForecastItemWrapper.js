@@ -7,10 +7,10 @@ export const ForecastItemWrapper = styled.div`
     flex-shrink: 0;
     font-size: 16px;
     border-radius: 25px;
-    background: #f8ffff;
-    margin: auto 2px auto 2px;
-    padding: 5px;
+    background: ${theme('colors.forecastItemBackground')};
+    margin: 5px 2px auto 2px;
+    padding: 0 5px;
     width: 110px;
-    height: 200px;
+    height: 210px;
     text-align: center;
 `;

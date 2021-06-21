@@ -5,7 +5,8 @@ export const LocationInfoWrapper = styled.div`
     display: flex;
     font-size: 16px;
     border-radius: 25px;
-    background: #8fbaae;
+    color: ${theme('colors.secondaryText')};
+    background: ${theme('colors.alternativeBackground')};
     padding: 16px 30px;
     margin: 50px auto 5px auto;
     width: 540px;

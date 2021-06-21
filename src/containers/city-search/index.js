@@ -12,44 +12,12 @@ export const CitySearch = () => {
 
     const dispatch = useDispatch();
 
-    const languages = [
-        'C', 'C#', 'C++', 'Clojure',
-        'Elm',
-        'Go',
-        'Haskell',
-        'Java', 'Javascript',
-        'Perl', 'PHP', 'Python',
-        'Ruby',
-        'Scala',
-    ];
-
-// https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_Special_Characters
-    /*const escapeRegexCharacters = (str) => {
-        return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-
-    const getSuggestions = (value) => {
-        const inputValue = escapeRegexCharacters(value.trim());
-
-        if (inputValue === '') {
-            return [];
-        }
-
-        const regex = new RegExp('^' + inputValue, 'i');
-
-        getSuggestionsApi(inputValue).then(res => console.log(res));
-
-        return filter(item => regex.test(item), languages);
-    }*/
-
     const getSuggestionValue = suggestion => suggestion;
 
     const renderSuggestion = suggestion => (<span>{suggestion}</span>);
 
     const onChange = (event, {newValue, method}) => {
-        console.log(method);
         if (method === 'enter' || method === 'click') {
-            console.log('Update global state');
             dispatch(updateCity(newValue));
             dispatch(setInputValue(''));
         }
@@ -69,22 +37,13 @@ export const CitySearch = () => {
 
     const onSuggestionSelected = (event, {suggestion, method}) => {
         dispatch(updateCity(suggestion));
-        console.log('Update global state');
         dispatch(setInputValue(''));
-    }
-
-    const onKeyDown = (event) => {
-        if (event.key === 'Enter' && suggestions.length > 0) {
-            dispatch(updateCity(suggestions[0]));
-            dispatch(setInputValue(''));
-        }
     }
 
     const inputProps = {
         placeholder: "Type 'c'",
         value: inputValue,
         onChange: onChange,
-        //onKeyDown: onKeyDown,
     };
 
     return (

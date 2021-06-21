@@ -6,9 +6,9 @@ export const ConditionsWrapper = styled.div`
     flex-direction: row;
     font-size: 16px;
     border-radius: 25px;
-    background: #8fbaae;
-    padding: 16px 0;
+    background: ${theme('colors.secondaryBackground')};
+    padding: 5px 0;
     margin: 5px auto;
     width: 600px;
-    height: 220px;
+    height: 280px;
 `;

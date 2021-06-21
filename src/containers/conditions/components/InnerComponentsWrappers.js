@@ -6,7 +6,7 @@ export const IsWeatherNiceWrapper = styled.div`
 `;
 
 export const GifWrapper = styled.div`
-    padding: 0 40px 5px 20px;
+    padding: 0 40px 0 20px;
     margin: auto;
 `;
 

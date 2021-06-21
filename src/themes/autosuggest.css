@@ -1,4 +1,5 @@
 .react-autosuggest__container {
+    color: black;
     position: relative;
     margin: auto;
 }

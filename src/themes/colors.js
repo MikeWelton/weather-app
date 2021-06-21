@@ -1,12 +1,49 @@
-export const colors = {
-    background: '#FFFFFF',
-    text: '#000000',
-    border: '#999999',
+import { THEME } from '../logic/const';
 
-    button: {
-        hoverBackground: '#dddddd',
-        selected: '#3583ff',
-    }
+export const colors = {
+    light: {
+        name: THEME.LIGHT,
+        background: '#efe9f4ff',
+        secondaryBackground: '#ABCADE',
+        alternativeBackground: '#09C3F6',
+        forecastItemBackground: '#f8ffff',
+        text: '#071B36',
+        secondaryText: '#000000',
+        temperatureText: '#1b4de4',
+    },
+    dark: {
+        name: THEME.DARK,
+        background: '#212F45',
+        secondaryBackground: '#0B525B',
+        alternativeBackground: '#26437c',
+        forecastItemBackground: '#017d80',
+        text: '#fff',
+        secondaryText: '#ececec',
+        temperatureText: '#0e0e0e',
+    },
+};
+
+    /*background: '#212F45',
+    secondaryBackground: '#0B525B',
+    alternativeBackground: '#26437c',
+    forecastItemBackground: '#017d80',
+    text: '#fff',
+    secondaryText: '#ececec',
+    temperatureText: '#0e0e0e',*/
+
+/*'--fire-opal': '#ee6352ff',
+'--cyan-process': '#08b2e3ff',
+'--magnolia': '#efe9f4ff',
+'--forest-green-crayola': '#57a773ff',
+'--independence': '#484d6dff',
+
+    '--deep-taupe': '#755861ff',
+'--charcoal': '#3a5061ff',
+'--manatee': '#9e97a5ff',
+'--davys-grey': '#4e5755ff',
+'--onyx': '#37383eff',*/
+
+/* special-green: #8fbaae */
 
     /* Some colors
     Light theme:
@@ -27,7 +64,6 @@ export const colors = {
     nice-blue: '#3583ff',
     nice-grey: '#5b5b5b'
      */
-};
 
 /*.react-autosuggest__container {
     position: relative;

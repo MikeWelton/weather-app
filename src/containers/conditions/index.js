@@ -9,7 +9,6 @@ import {
 } from "../weather/selectors";
 import { toLower } from "ramda";
 import {
-    ConditionAndGifWrapper,
     ConditionInfoWrapper, GifWrapper,
     IsWeatherNiceWrapper, LoaderWrapper
 } from './components/InnerComponentsWrappers';

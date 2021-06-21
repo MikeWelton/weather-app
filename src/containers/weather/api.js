@@ -2,23 +2,31 @@ import axios, { post } from "axios";
 import { API } from "../../logic/const";
 import { map, unnest } from 'ramda';
 
+export const parseLocationData = (location) => {
+    return {
+        fullName: `${location.name}, `
+            + ((location.region !== '') ? `${location.region}, ` : '')
+            + `${location.country}`,
+        shortName: `${location.name}, ${location.country}`,
+        latitude: location.lat,
+        longitude: location.lon,
+        localtime: location.localtime
+    };
+}
+
+export const parseRealtimeData = (current) => {
+    return {
+        temp: current.temp_c,
+        condition: current.condition,
+    };
+}
+
 const parseApiData = (data) => {
     let { location, current, forecast } = data;
     let forecastday = forecast.forecastday;
     return {
-        location: {
-            fullName: `${location.name}, `
-                + ((location.region !== '') ? `${location.region}, ` : '')
-                + `${location.country}`,
-            shortName: `${location.name}, ${location.country}`,
-            latitude: location.lat,
-            longitude: location.lon,
-            localtime: location.localtime
-        },
-        realtime: {
-            temp: current.temp_c,
-            condition: current.condition,
-        },
+        location: parseLocationData(location),
+        realtime: parseRealtimeData(current),
         hourly: unnest(map((item) => {
             let { hour } = item;
             return map((item) => {
@@ -79,4 +87,21 @@ export const getCityNameWithGeolocation = async () => {
     let response = await post(url);
 
     return response.data[0].name;
+}
+
+export const getRealtimeForecastAndLocationData = async (cityName) => {
+    let url = axios.getUri({
+        url: API.WEATHER.URL + API.WEATHER.METHOD.CURRENT,
+        params: {
+            key: API.WEATHER.KEY,
+            q: cityName
+        }
+    });
+
+    let response = await post(url);
+
+    return {
+        location: parseLocationData(response.data.location),
+        realtime: parseRealtimeData(response.data.current)
+    };
 }

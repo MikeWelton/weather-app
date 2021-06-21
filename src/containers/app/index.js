@@ -1,16 +1,20 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../themes';
 import { GlobalStyle } from '../../global-styles';
+import { Weather } from '../weather';
+import { useSelector } from 'react-redux';
+import { themeSelector } from '../weather/selectors';
 
-import {Weather} from "../weather";
+export const App = () => {
+    const theme = useSelector(themeSelector);
 
-export const App = () => (
-    <ThemeProvider theme={theme}>
-        <>
-            <GlobalStyle />
+    return (
+        <ThemeProvider theme={theme}>
+            <>
+                <GlobalStyle/>
 
-            <Weather />
-        </>
-    </ThemeProvider>
-);
+                <Weather/>
+            </>
+        </ThemeProvider>
+    );
+};

@@ -3,7 +3,8 @@ import { theme } from 'styled-tools';
 
 export const ButtonWrapper = styled.button`
     font-size: 16px;
-    background: #8fbaae;
+    color: ${theme('colors.secondaryText')};
+    background: ${theme('colors.alternativeBackground')};
     padding: 0;
     margin: 0;
     width: 120px;

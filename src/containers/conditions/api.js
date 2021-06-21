@@ -2,6 +2,19 @@ import axios, { post } from "axios";
 import { API } from "../../logic/const";
 import { FETCHED_GIFS_COUNT } from "./const";
 
+const selectGif = (response) => {
+    let results = response.data.results;
+    let random = Math.floor(Math.random() * FETCHED_GIFS_COUNT);
+    let url, height = 271;
+
+    for (let i = random; height > 270; i = ((i + 1) % results.length)) {
+        url = results[i].media[0].tinygif.url;
+        height = results[i].media[0].tinygif.dims[1];
+    }
+
+    return url;
+}
+
 export const getGifUrl = async (keyword) => {
     let url = axios.getUri({
         url: API.GIF.URL,
@@ -16,7 +29,6 @@ export const getGifUrl = async (keyword) => {
     });
 
     let response = await post(url);
-    let random = Math.floor(Math.random() * FETCHED_GIFS_COUNT);
 
-    return response.data.results[random].media[0].tinygif.url;
+    return selectGif(response);
 }

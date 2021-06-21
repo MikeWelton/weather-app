@@ -14,7 +14,6 @@ export const getSuggestions = async (input) => {
         //TODO .catch(error => console.log(error.response.data));
 
     let data = map((item => item.name), response.data);
-    console.log(data);
 
     return data;
 }
