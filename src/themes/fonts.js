@@ -1,11 +1,9 @@
 export const fonts = {
-    basic: {
-        fontFamily: "'Century Gothic', Futura, sans-serif",
-        fontSize: '14px'
+    fontFamily: "'Century Gothic', Futura, sans-serif",
+    fontSize: {
+        normal: '16px',
+        medium: '24px',
+        large: '30px',
+        xxl: '80px'
     },
-    temperature: { // TODO
-        fontSize: '24px',
-        fontWeight: 'bold',
-        lineHeight: '34px'
-    }
 };

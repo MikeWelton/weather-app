@@ -1,3 +1,4 @@
+export const RESET_GIF = 'conditions/RESET_GIF';
 export const FETCH_GIF = 'conditions/FETCH_GIF';
 export const SET_GIF_URL = 'conditions/SET_GIF_URL';
 export const START_CHANGING_GIFS = 'conditions/START_CHANGING_GIFS';

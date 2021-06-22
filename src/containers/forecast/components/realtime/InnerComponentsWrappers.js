@@ -4,11 +4,11 @@ import { theme } from 'styled-tools';
 export const RealtimeInfoWrapper = styled.div`
     width: 220px;
     margin: auto;
-    font-size: 24px;
+    font-size: ${theme('fonts.fontSize.medium')};
 `;
 
 export const TemperatureWrapper = styled.div`
-    font-size: 80px;
+    font-size: ${theme('fonts.fontSize.xxl')};
     color: ${theme('colors.temperatureText')};
 `;
 

@@ -3,8 +3,8 @@ import Autosuggest from 'react-autosuggest';
 import { inputValueSelector, suggestionsSelector } from "./selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSuggestions, setInputValue, setSuggestions } from "./actions";
-import { theme } from '../../themes/autosuggest.css';
 import { updateCity } from "../weather/actions";
+import { autosuggestStyle } from './autosuggest-style';
 
 export const CitySearch = () => {
     const inputValue = useSelector(inputValueSelector);
@@ -47,7 +47,7 @@ export const CitySearch = () => {
     };
 
     return (
-        <Autosuggest theme={theme}
+        <Autosuggest theme={autosuggestStyle}
                      suggestions={suggestions}
                      onSuggestionsFetchRequested={onSuggestionsFetchRequested}
                      onSuggestionsClearRequested={onSuggestionsClearRequested}

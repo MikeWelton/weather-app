@@ -5,7 +5,6 @@ export const ForecastItemWrapper = styled.div`
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    font-size: 16px;
     border-radius: 25px;
     background: ${theme('colors.forecastItemBackground')};
     margin: 5px 2px auto 2px;

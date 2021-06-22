@@ -4,7 +4,6 @@ import { theme } from 'styled-tools';
 export const ConditionsWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    font-size: 16px;
     border-radius: 25px;
     background: ${theme('colors.secondaryBackground')};
     padding: 5px 0;

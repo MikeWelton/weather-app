@@ -10,7 +10,8 @@ export const Daily = () => {
     return (
         <DailyWrapper>
             {daily.map((item) => (
-                <ForecastItem temperature={item.get('avgTemp')}
+                <ForecastItem key={item.get('date')}
+                              temperature={item.get('avgTemp')}
                               time={item.get('date').slice(5)}
                               iconUrl={item.get('condition').get('icon')}
                 />

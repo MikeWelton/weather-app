@@ -14,8 +14,8 @@ export const GlobalStyle = createGlobalStyle`
         color: ${theme('colors.text')};
         background-color: ${theme('colors.background')};
 
-        font-size: ${theme('fonts.basic.fontSize')};
-        font-family: ${theme('fonts.basic.fontFamily')};
+        font-size: ${theme('fonts.fontSize.normal')};
+        font-family: ${theme('fonts.fontFamily')};
         overflow: hidden;
     }
 

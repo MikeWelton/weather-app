@@ -1,6 +1,8 @@
+export const RESET_WEATHER = 'weather/RESET_WEATHER';
 export const SET_THEME = 'weather/SET_THEME';
 export const UPDATE_WEATHER = 'weather/UPDATE_WEATHER';
 export const UPDATE_CITY = 'weather/UPDATE_CITY';
+export const UPDATE_REALTIME_AND_LOCATION = 'weather/UPDATE_REALTIME_AND_LOCATION';
 export const SET_REALTIME_AND_LOCATION = 'weather/SET_REALTIME_AND_LOCATION';
 export const UPDATE_WITH_GEOLOCATION = 'weather/UPDATE_WITH_GEOLOCATION';
 export const START_CHANGING_REALTIME_FORECAST =

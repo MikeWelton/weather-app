@@ -3,7 +3,6 @@ import { theme } from 'styled-tools';
 
 export const LocationInfoWrapper = styled.div`
     display: flex;
-    font-size: 16px;
     border-radius: 25px;
     color: ${theme('colors.secondaryText')};
     background: ${theme('colors.alternativeBackground')};

@@ -89,7 +89,7 @@ export const getCityNameWithGeolocation = async () => {
     return response.data[0].name;
 }
 
-export const getRealtimeForecastAndLocationData = async (cityName) => {
+export const getRealtimeForecastAndLocation = async (cityName) => {
     let url = axios.getUri({
         url: API.WEATHER.URL + API.WEATHER.METHOD.CURRENT,
         params: {

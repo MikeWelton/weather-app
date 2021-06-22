@@ -10,7 +10,7 @@ export const TimeWrapper = styled.div`
 export const TemperatureWrapper = styled.div`
     color: ${theme('colors.temperatureText')};
     margin: 5px;
-    font-size: 30px;
+    font-size: ${theme('fonts.fontSize.large')};
 `;
 
 export const WeatherIcon = styled.img`

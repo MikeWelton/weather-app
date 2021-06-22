@@ -4,11 +4,11 @@ import { theme } from 'styled-tools';
 export const HourlyWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    font-size: 16px;
     border-radius: 25px;
     background: ${theme('colors.secondaryBackground')};
+    padding: 0 10px 0 3px;
     margin: 5px auto;
     width: 1000px;
-    height: 230px;
-    overflow-x: scroll;
+    height: 235px;
+    overflow-x: auto;
 `;

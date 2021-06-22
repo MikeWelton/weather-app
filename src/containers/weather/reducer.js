@@ -1,5 +1,10 @@
 import { fromJS } from 'immutable';
-import { SET_REALTIME_AND_LOCATION, SET_THEME, UPDATE_WEATHER } from './const';
+import {
+    RESET_WEATHER,
+    SET_REALTIME_AND_LOCATION,
+    SET_THEME,
+    UPDATE_WEATHER
+} from './const';
 import { lightTheme } from '../../themes';
 
 export const WEATHER_REDUCER_NAME = 'Weather';
@@ -29,9 +34,13 @@ const initialState = fromJS({
 
 export const weatherReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_THEME:
+        case RESET_WEATHER: {
+            return state.updateIn(['location', 'fullName'], () => '');
+        }
+        case SET_THEME: {
             let { theme } = action;
             return state.set('theme', fromJS(theme));
+        }
         case UPDATE_WEATHER: {
             let { hourly, daily } = action.weatherData;
             return setLocationAndRealtime(state, action.weatherData)

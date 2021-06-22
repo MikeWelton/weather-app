@@ -22,7 +22,8 @@ export const Hourly = () => {
     return (
         <HourlyWrapper>
             {currentHourly.map((item) => (
-                <ForecastItem temperature={item.get('temp')}
+                <ForecastItem key={item.get('time')}
+                              temperature={item.get('temp')}
                               time={item.get('time').slice(-5)}
                               iconUrl={item.get('condition').get('icon')}
                 />
