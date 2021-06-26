@@ -6,6 +6,7 @@ import { from } from "rxjs";
 import { getSuggestions } from "./api";
 import { setSuggestions } from "./actions";
 
+/* Fetches suggestions from API and puts them into dispatched action. */
 const newInputEpic = (action$) =>
     action$.pipe(
         ofType(FETCH_SUGGESTIONS),

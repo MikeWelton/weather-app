@@ -10,6 +10,7 @@ import { Daily } from './components/daily';
 import { cityNameSelector } from '../weather/selectors';
 import Loader from 'react-loader-spinner';
 import { LoaderWrapper } from '../conditions/components/InnerComponentsWrappers';
+import { RealtimeWrapper } from './components/realtime/RealtimeWrapper';
 
 export const Forecast = () => {
     const forecastType = useSelector(forecastTypeSelector);
@@ -29,9 +30,11 @@ export const Forecast = () => {
 
     if (cityName === '') {
         forecast = (
-            <LoaderWrapper>
-                <Loader type="TailSpin" color="#00BFFF" height={100} width={100} />
-            </LoaderWrapper>
+            <RealtimeWrapper>
+                <LoaderWrapper>
+                    <Loader type="TailSpin" color="#00BFFF" height={100} width={100} />
+                </LoaderWrapper>
+            </RealtimeWrapper>
         );
     }
 

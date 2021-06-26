@@ -12,11 +12,12 @@ import {
     ConditionInfoWrapper, GifWrapper,
     IsWeatherNiceWrapper, LoaderWrapper
 } from './components/InnerComponentsWrappers';
-import { gifUrlSelector } from "./selectors";
+import { gifLoadedSelector, gifUrlSelector } from './selectors';
 
 export const Conditions = () => {
     const realtimeForecast = useSelector(realtimeForecastSelector);
     const dailyForecast = useSelector(dailyForecastSelector);
+    const gifLoaded = useSelector(gifLoadedSelector);
     const gifUrl = useSelector(gifUrlSelector);
 
     const conditionText = realtimeForecast.get('condition').get('text');
@@ -25,7 +26,7 @@ export const Conditions = () => {
     const conditionInfo = `Currently  
                             ${toLower(conditionText)}`;
 
-    if (gifUrl === '') {
+    if (!gifLoaded) {
         return (
             <ConditionsWrapper>
                 <LoaderWrapper>

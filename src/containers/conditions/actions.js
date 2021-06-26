@@ -2,11 +2,12 @@ import {
     START_CHANGING_GIFS,
     FETCH_GIF,
     SET_GIF_URL,
-    RESET_GIF
+    SET_GIF_LOADED
 } from './const';
 
-export const resetGif = () => ({
-    type: RESET_GIF,
+export const setGifLoaded = (gifLoaded) => ({
+    type: SET_GIF_LOADED,
+    gifLoaded
 });
 
 export const fetchGif = (keyword) => ({

@@ -27,3 +27,6 @@ export const API = {
         URL: 'https://g.tenor.com/v1/search',
     }
 }
+
+export const GIF_CHANGE_INTERVAL = 30 * 1000; // 30 seconds
+export const REALTIME_FORECAST_CHANGE_INTERVAL = 15 * 60 * 1000; // 15 minutes

@@ -1,5 +1,6 @@
 import { forEach } from 'ramda';
 
+/* Calculates if conditions are nice. */
 export const calculateConditions = (dailyForecast) => {
     const MIN_NICE_TEMP = 15,
         MAX_NICE_TEMP = 30,

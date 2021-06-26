@@ -1,6 +1,5 @@
 import { combineEpics, ofType } from "redux-observable";
 import {
-    REALTIME_FORECAST_CHANGE_INTERVAL,
     START_CHANGING_REALTIME_FORECAST,
     UPDATE_CITY, UPDATE_REALTIME_AND_LOCATION,
     UPDATE_WITH_GEOLOCATION
@@ -22,12 +21,28 @@ import {
 } from './actions';
 import {
     startChangingGifs,
-    fetchGif, resetGif
+    fetchGif, setGifLoaded
 } from '../conditions/actions';
 import { cityNameSelector } from './selectors';
 import { historySelector } from '../history/selectors';
 import { updateHistory } from '../history/actions';
+import { REALTIME_FORECAST_CHANGE_INTERVAL } from '../../logic/const';
 
+/* Dispatches reset gif and weather actions so the components know that
+we are fetching weather and gif (so they can display some loader animation). */
+const resetBeforeUpdateEpic = (action$) =>
+    action$.pipe(
+        ofType(UPDATE_CITY),
+        mergeMap(() => [
+            resetWeather(),
+            setGifLoaded(false),
+        ])
+    );
+
+/* First, checks if data of given city is already cached in history.
+If so then fetches only realtime data.
+Otherwise fetches all weather data for specified city and also pipes history
+update with data of new city. */
 const updateCityDataEpic = (action$, state$) =>
     action$.pipe(
         ofType(UPDATE_CITY),
@@ -48,20 +63,19 @@ const updateCityDataEpic = (action$, state$) =>
             else {
                 apiFetchData = getRealtimeForecastAndLocation;
                 actions = [
+                    (_data) => updateWeather(historyItem.toJS()),
                     setRealtimeAndLocation
                 ]
             }
             return from(apiFetchData(cityName))
                 .pipe(mergeMap((data) => [
-                    resetWeather(),
-                    resetGif(),
-                    fetchGif(data.realtime.condition.text)
-                ]
-                    .concat(actions.map((action) => action(data)))
-                ))
+                    fetchGif(data.realtime.condition.text),
+                    setGifLoaded(true),
+                ].concat(actions.map((action) => action(data)))))
         })
     );
 
+/* Makes async call to obtain geolocation info and updates weather data. */
 const updateWithGeolocationEpic = (action$) =>
     action$.pipe(
         ofType(UPDATE_WITH_GEOLOCATION),
@@ -75,6 +89,7 @@ const updateWithGeolocationEpic = (action$) =>
         )
     );
 
+/* Gets and updates realtime info. */
 const updateRealtimeForecastEpic = (action$) =>
     action$.pipe(
         ofType(UPDATE_REALTIME_AND_LOCATION),
@@ -84,6 +99,7 @@ const updateRealtimeForecastEpic = (action$) =>
         )
     );
 
+/* Inits interval observable to update realtime data. */
 const startChangingRealtimeForecastEpic = (action$, state$) =>
     action$.pipe(
         ofType(START_CHANGING_REALTIME_FORECAST),
@@ -93,6 +109,7 @@ const startChangingRealtimeForecastEpic = (action$, state$) =>
     )
 
 export const weatherEpics = combineEpics(
+    resetBeforeUpdateEpic,
     updateCityDataEpic,
     updateWithGeolocationEpic,
     updateRealtimeForecastEpic,

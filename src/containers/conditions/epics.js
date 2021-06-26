@@ -1,11 +1,12 @@
 import { combineEpics, ofType } from "redux-observable";
-import { START_CHANGING_GIFS, FETCH_GIF, GIF_CHANGE_INTERVAL } from "./const";
+import { START_CHANGING_GIFS, FETCH_GIF } from "./const";
 import { prop } from 'ramda';
 import { map, switchMap } from 'rxjs/operators';
 import { from, interval } from "rxjs";
 import { getGifUrl } from "./api";
 import { fetchGif, setGifUrl } from "./actions";
 import { realtimeForecastSelector } from "../weather/selectors";
+import { GIF_CHANGE_INTERVAL } from '../../logic/const';
 
 const fetchGifEpic = (action$) =>
     action$.pipe(

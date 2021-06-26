@@ -8,6 +8,6 @@ export const ConditionsWrapper = styled.div`
     background: ${theme('colors.secondaryBackground')};
     padding: 5px 0;
     margin: 5px auto;
-    width: 600px;
+    width: ${theme('dims.mainColumnWidth')};
     height: 280px;
 `;

@@ -7,6 +7,6 @@ export const RealtimeWrapper = styled.div`
     border-radius: 25px;
     background: ${theme('colors.secondaryBackground')};
     margin: 5px auto;
-    width: 600px;
+    width: ${theme('dims.mainColumnWidth')};
     height: 240px;
 `;

@@ -2,7 +2,6 @@ import {
     UPDATE_WEATHER,
     UPDATE_CITY,
     SET_REALTIME_AND_LOCATION,
-    UPDATE_WITH_GEOLOCATION,
     START_CHANGING_REALTIME_FORECAST,
     SET_THEME,
     RESET_WEATHER,
@@ -37,10 +36,6 @@ export const setRealtimeAndLocation = (data) => ({
     type: SET_REALTIME_AND_LOCATION,
     data
 });
-
-export const updateWithGeolocation = () => ({
-    type: UPDATE_WITH_GEOLOCATION
-})
 
 export const startChangingRealtimeForecast = () => ({
     type: START_CHANGING_REALTIME_FORECAST,

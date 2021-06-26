@@ -17,8 +17,7 @@ export const autosuggestStyle = {
         outline: 'none',
     },
     inputFocused: {
-        borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 0,
+        borderRadius: 0,
     },
     suggestionsContainer: {
         display: 'none',
