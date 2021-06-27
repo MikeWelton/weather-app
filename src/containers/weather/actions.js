@@ -5,7 +5,7 @@ import {
     START_CHANGING_REALTIME_FORECAST,
     SET_THEME,
     RESET_WEATHER,
-    UPDATE_REALTIME_AND_LOCATION
+    UPDATE_REALTIME_AND_LOCATION, UPDATE_WITH_GEOLOCATION
 } from './const';
 
 export const resetWeather = () => ({
@@ -30,6 +30,10 @@ export const updateWeather = (weatherData) => ({
 export const updateRealtime = (cityName) => ({
     type: UPDATE_REALTIME_AND_LOCATION,
     cityName
+});
+
+export const updateWithGeolocation = () => ({
+    type: UPDATE_WITH_GEOLOCATION,
 });
 
 export const setRealtimeAndLocation = (data) => ({

@@ -89,13 +89,13 @@ const updateWithGeolocationEpic = (action$) =>
         )
     );
 
-/* Gets and updates realtime info. */
+/* Gets and updates realtime data. */
 const updateRealtimeForecastEpic = (action$) =>
     action$.pipe(
         ofType(UPDATE_REALTIME_AND_LOCATION),
         map(prop('cityName')),
-        switchMap((cityName) => from(getRealtimeForecastAndLocation(cityName)
-            .pipe(map((data) => setRealtimeAndLocation(data))))
+        switchMap((cityName) => from(getRealtimeForecastAndLocation(cityName))
+            .pipe(map((data) => setRealtimeAndLocation(data)))
         )
     );
 
