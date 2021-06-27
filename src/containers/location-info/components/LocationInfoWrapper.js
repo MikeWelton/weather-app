@@ -7,7 +7,7 @@ export const LocationInfoWrapper = styled.div`
     color: ${theme('colors.secondaryText')};
     background: ${theme('colors.alternativeBackground')};
     padding: 16px 30px;
-    margin: 50px auto 5px auto;
+    margin: 20px auto 5px auto;
     width: 540px;
     height: 20px;
 `;

@@ -16,10 +16,9 @@ export const GlobalStyle = createGlobalStyle`
 
         font-size: ${theme('fonts.fontSize.normal')};
         font-family: ${theme('fonts.fontFamily')};
-        overflow: hidden;
     }
 
     body {
-        margin: ${theme('dims.bigSpacing')};
+        overflow-x: hidden;
     }
 `;

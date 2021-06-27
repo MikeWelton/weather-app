@@ -41,7 +41,7 @@ export const CitySearch = () => {
     }
 
     const inputProps = {
-        placeholder: "Type 'c'",
+        placeholder: "Find city",
         value: inputValue,
         onChange: onChange,
     };

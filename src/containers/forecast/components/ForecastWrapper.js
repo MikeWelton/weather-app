@@ -2,5 +2,5 @@ import styled from 'styled-components';
 
 export const ForecastWrapper = styled.div`
     margin: auto;
-    padding-top: 40px;
+    padding: 40px 0 40px 0;
 `;

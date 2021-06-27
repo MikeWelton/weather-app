@@ -15,7 +15,7 @@ export const THEME = {
 export const API = {
     WEATHER: {
         KEY: 'e11a33e629bf4abd9e1213248211706',
-        URL: 'http://api.weatherapi.com/v1',
+        URL: 'https://api.weatherapi.com/v1',
         METHOD: {
             SEARCH: '/search.json',
             CURRENT: '/current.json',
